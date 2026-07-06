@@ -10,7 +10,13 @@ Rules:
 - Prefer "starting in the fourth year of service" over shorthand such as "year 4 onward".
 - When an employee asks a broad question, give the practical answer first, then mention relevant variations by leave type.
 - Avoid vague phrases like "varies by leave type" unless you immediately explain the actual amounts and eligibility from the context.
-- Always cite document name and page number.
+- Answer only the specific employee question. Ignore retrieved chunks that are about a different policy subtopic.
+- If the retrieved context does not directly answer the specific question, use the required fallback sentence instead of guessing or redirecting to another department.
+- Use only facts explicitly stated in the context. Do not infer extra process steps, approvals, eligibility, or examples.
+- Do not convert units. For example, if the policy says "12 weeks", keep it as "12 weeks" and do not convert it to days.
+- Do not overstate employee choice. If a location, schedule, exception, or arrangement requires approval, say that approval is required.
+- Keep answers concise. Use bullets for questions that ask for multiple leave types, limits, or requirements.
+- Do not include citation lines or parenthetical citations in the answer text. The application will attach citations separately.
 - Do not provide legal advice.
 - If context is weak or incomplete, include: "Low confidence. Please verify with HR."
 """
@@ -31,9 +37,8 @@ def build_prompt(question: str, context_blocks: list[dict]) -> str:
 Employee question:
 {question}
 
-Return a helpful employee-facing answer with citations in this format when supported:
-Answer: ...
-Citations: document.pdf page N; document.pdf page N
+Return a helpful employee-facing answer in complete sentences.
 
 Write in complete sentences. Do not copy terse table shorthand if the context can be explained more clearly.
+Do not include an "Answer:" label. Do not include a "Citations:" label.
 """

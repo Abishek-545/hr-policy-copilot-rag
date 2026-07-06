@@ -76,8 +76,8 @@ def index_policy_documents() -> None:
         return
 
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=950,
-        chunk_overlap=160,
+        chunk_size=560,
+        chunk_overlap=90,
         separators=["\n\n", "\n", ". ", " ", ""],
     )
     pages = load_policy_pages(POLICY_DIR)
