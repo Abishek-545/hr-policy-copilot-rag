@@ -1,0 +1,11 @@
+__pycache__/
+.venv/
+venv/
+.env
+.env.local
+node_modules/
+dist/
+backend/vector_index.json
+backend/.pytest_cache/
+frontend/.vite/
+*.tsbuildinfo
