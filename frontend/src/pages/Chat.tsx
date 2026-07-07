@@ -46,7 +46,7 @@ export default function Chat() {
 
   return (
     <div className="grid gap-6 xl:grid-cols-[1fr_360px]">
-      <section className="rounded-lg border border-slate-800 bg-slate-900 shadow-2xl shadow-black/20">
+      <section className="flex h-[calc(100vh-132px)] min-h-0 flex-col rounded-lg border border-slate-800 bg-slate-900 shadow-2xl shadow-black/20">
         <div className="border-b border-slate-800 px-5 py-4">
           <h1 className="text-xl font-semibold text-white">Ask HR</h1>
           <p className="mt-1 text-sm text-slate-400">
@@ -54,7 +54,7 @@ export default function Chat() {
           </p>
         </div>
 
-        <div className="h-[560px] space-y-5 overflow-y-auto px-5 py-5">
+        <div className="min-h-0 flex-1 space-y-5 overflow-y-auto px-5 py-5">
           {messages.length === 0 && (
             <div className="rounded-lg border border-dashed border-slate-700 bg-slate-950/70 p-8 text-center">
               <Bot className="mx-auto text-blue-300" size={34} />
