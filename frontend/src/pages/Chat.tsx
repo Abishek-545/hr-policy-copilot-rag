@@ -38,7 +38,7 @@ export default function Chat() {
         { role: "assistant", content: response.answer, response }
       ]);
     } catch {
-      setError("The HR assistant could not be reached. Please check that the backend is running.");
+      setError("The HR assistant could not be reached. The hosted backend may still be waking up; please wait a moment and try again.");
     } finally {
       setLoading(false);
     }
